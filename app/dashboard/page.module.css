@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: auto;
+    height: fit-content;
+    width: 25vw;
+    background-color: rgb(210, 255, 255);
+    margin-top: 126px;
+    padding: 12px;
+    border-radius: 11px;
+}
+
+.btn {
+    width: 21vw;
+    background-color: #fd3c2e;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 0 1px saddlebrown;
+}
