@@ -15,8 +15,9 @@ const Login = () => {
       router.replace("/dashboard");
     }
   }, [status, router]);
-
   const { register, handleSubmit, setError, formState: { errors, isSubmitting } } = useForm();
+  if (status === "loading") return null;
+
   const submit = async (e) => {
     const { email, password } = e;
 
