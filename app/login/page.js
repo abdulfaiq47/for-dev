@@ -22,15 +22,17 @@ const Login = () => {
 
     try {
       const res = await signIn("credentials", {
-        
+        redirect: false,
         email,
         password,
-        redirect: false
+        
+        callbackUrl: "/dashboard"
       })
+
       if (res.error) {
         toast.error("Invaild Credentails! ")
         return
-      }
+      } 
 
       toast.success("Login successful!");
       router.replace("/dashboard");
@@ -59,14 +61,18 @@ const Login = () => {
         </form>
       </div>
 
-      <button className={style.dashBtn} ><Link className={style.link} onClick={()=>{
-        if(session){
-          router.push("dashboard")
-
-        }else{
-          toast.error("Please login first!");
-        }
-      }} href="/dashboard" >Dash</Link></button>
+       <button
+        className={`${style.dashBtn}  ${style.link}`}
+        onClick={() => {
+          if (session) {
+            router.push("/dashboard");
+          } else {
+            toast.error("Please login first!");
+          }
+        }}
+      >
+        Dash
+      </button>
     </div>
   )
 }
