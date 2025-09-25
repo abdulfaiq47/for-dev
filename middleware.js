@@ -1,4 +1,6 @@
-export { default } from 'next-auth/middleware'
+// middleware.js (root of the project)
+export { default } from "next-auth/middleware";
 
-export const config = { matcher: ["/dashboard"] };
-
+export const config = {
+  matcher: ["/dashboard/:path*"], // ✅ Protect ONLY /dashboard
+};
